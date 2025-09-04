@@ -14,3 +14,13 @@ app.listen(PORT, function () {
 app.get("/", function (req, res) {
   res.json({ message: "Welcome to the server. GET comfy" });
 });
+
+//imports
+//initialise express and cors
+//tell server to you JSON
+//set up a port
+//set up a root route
+
+//TODO: I want to READ all the data from my table
+
+//TODO: I want to CREATE new data in the table
