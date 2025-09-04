@@ -8,7 +8,7 @@ app.use(express.json());
 
 const PORT = 8080;
 app.listen(PORT, function () {
-  console.info(` Server is running in port ${PORT}`);
+  console.info(`Server is running in port ${PORT}`);
 });
 
 app.get("/", function (req, res) {

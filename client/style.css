@@ -4,15 +4,16 @@
   box-sizing: border-box;
 }
 
+header {
+  font-size: 20px;
+  background-color: red;
+}
+
 body {
   background-color: lightskyblue;
   display: grid;
   grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
   grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
-}
-
-title {
-  font-size: 20px;
 }
 
 #userFeedback {
@@ -21,4 +22,13 @@ title {
 
 #dataReturn {
   background-color: aqua;
+}
+
+button:hover {
+  color: palevioletred;
+}
+
+.shy {
+  font-size: 15px;
+  background-color: pink;
 }
