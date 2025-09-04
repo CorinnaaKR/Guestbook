@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: lightskyblue;
+  display: grid;
+  grid-template-columns: 0.5fr 1fr 1fr 1fr 0.5fr;
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 0.5fr;
+}
+
+title {
+  font-size: 20px;
+}
+
+#userFeedback {
+  background-color: lightblue;
+}
+
+#dataReturn {
+  background-color: aqua;
+}
