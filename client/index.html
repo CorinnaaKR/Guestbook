@@ -11,6 +11,17 @@
   <body>
     <section>
       <div id="userFeedback"></div>
+      <form id="guestFeedback">
+        <label for="name"> Full Name: </label>
+        <input type="text" name="name" required />
+        <label for="photo">Photo of choice: </label>
+        <input type="text" name="PoC" required />
+        <label for="age"> Age: </label>
+        <input type="number" name="age" required min="16" max="75" />
+        <label for="occupation"> Occupation: </label>
+        <input type="text" name="occupation" required />
+        <button type="submit">Submit new data</button>
+      </form>
     </section>
 
     <section>

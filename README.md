@@ -20,4 +20,5 @@ Optional
 
 THOUGHTS THROUGHOUT PROJECT
 Followed Manny's demo, had a couple of errors crop up from missing steps in the step - initally mixed up the steps when making the client/server folders as my notes had errors in them. Corrected my notes then began again - followed Sam's instructions in his README. to set up the client and server folders, and found this really easy and understandable to follow. Errored in the deployment on render, checked through the steps and guide to see if I'd missed any steps - I hadn't, so I asked Manny, who spotted a syntax error in one of the folder names. Deployment then completed with no issues - yay!
-Went back over Joe's feedback from the week2 assignment, after asking where to start. Made the html containers to hold the the user inputs and database returns, then created a template for styling the different elements
+Went back over Joe's feedback from the week2 assignment, after asking where to start. Made the html containers to hold the the user inputs and database returns, then created a template for styling the different elements.
+I created two scratch files, one in server, one in client, to write out my thoughts and process - i also copied some of the demo code from the relevant demos into the scratch files so i wouldnt have to keep switching tabs. Used the demo to create the form templates I wanted.
