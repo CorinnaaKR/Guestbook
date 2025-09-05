@@ -21,17 +21,6 @@ app.listen(PORT, function () {
 //set up a port
 //set up a root route
 
-//TODO: I want to READ all the data from my table
-
-// http://localhost:8080/staff --> endpoint, params
-app.get("/getDBData", async function (req, res) {
-  //we need to query our database here
-  const query = await db.query(`SELECT * FROM userFeedback;`);
-  console.log(query);
-  //parse data into JSON and wrangle data
-  res.json(query.rows);
-});
-
 //find wrangled data demo
 
 //TODO: I want to READ all the data from the staff table
@@ -46,13 +35,13 @@ app.get("/getDBData", async function (req, res) {
 
 //Wrangle Data
 async function retrieveData() {
-  const response = await fetch("http://localhost:8080/staff ");
+  const response = await fetch("http://localhost:8080/guest");
   const data = await response.json();
   console.log(retrieveData);
   //filtering the data to the properties that we need --> data wrangling
-  const wrangledData = retrieveData.text;
-  console.log(wrangledData);
-  return wrangledData;
+  const wrangledGuest = retrieveData.text;
+  console.log(wrangledGuest);
+  return wrangledGuest;
 }
 
 //TODO: Render the data on the DOM
@@ -63,47 +52,56 @@ function addGuestInfo(localhost) {
   guestFeedback.appendChild(guestFeedback);
 }
 
-//TODO: put the data in the API
-async function addGuestFeedbacktoAPI() {
-  const addGuestInfo = await guestFeedback();
+// //TODO: put the data in the API
+async function addGuestFeedback() {
+  const addGuestInfo = await retrieveData();
+
   addGuestInfo(guestFeedback);
 }
 
-addGuestFeedbacktoAPI();
+addGuestFeedback();
 
 //TODO: I want to CREATE new data in the table
 
-
-async function retrieveComments() {
-  const response = await fetch(
-    "https://localhost:8080/guests"
-  );
-
-  console.log(response);
+async function guestComments() {
+  const response = await fetch("https://localhost:8080/guests");
 
   const guestsComments = await response.json();
-  console.log(da);
+  console.log(guestComments);
+
+  localStorage.setItem("clickerData", stringifiedClickerData);
+  const stringifiedClickerData = JSON.stringify();
+
+  console.log(response);
 
   return guestComments;
 }
 
-//RETRIEVING & CALLING DATA
-
 //CREATING UPGRADES Comments
 
-const addGuestComments = document.getElementById("guestFeedback");
-
 async function showComments() {
-  const comments = await cookieUpgrades();
+  const showComments = await guestComments();
 
-  upgrades.forEach((upgrades, i) => {
-    //
+  guestComments.forEach((guestComments, i) => {
     const commentsBox = document.createElement("p");
-    commentsBox.textContent = `${Name} (Name: ${upgrades.cost}, +${upgrades.increase} CPS)`;
-    console.log(upgradesButton);
+    commentsBox.textContent = `${Name} (Name: ${guestComments.email} E-mail, +${guestComments.comment} Comments)`;
+    console.log(showComments);
 
     shopContainer.appendChild(upgradesButton);
+  });
+}
 
-}});
+showComments();
 
-createUpgrades();
+//TODO: CREATE (POST) new data in the database
+app.post("/add-guest", (req, res) => {
+  //an element to store the data coming from the client
+  const newGuest = req.body.formValues;
+  //database query
+  //in our SQL queries, we can have a placeholder (parameter) that we will replace with the actual values when the client sends them
+  const query = db.query(
+    `INSERT INTO guest (name, email, comment) VALUES ($1, $2, $3, $4)`,
+    [newGuest.name, newGuest.email, newGuest.comment]
+  );
+  res.json("Data sent", query);
+});
