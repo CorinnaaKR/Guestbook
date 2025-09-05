@@ -1,4 +1,43 @@
-  
+  //MANNY DEMO CODE - INDEX HTML - FORMS & VALIDATION
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./app.js" defer></script>
+    <title>Forms and validation</title>
+  </head>
+  <body>
+    <h1>Forms and Validation</h1>
+    <form id="user-form">
+      <label for="full-name">Full name: </label>
+      <input
+        name="full-name"
+        id="full-name"
+        class="full-name"
+        type="text"
+        required
+        placeholder="spell check!"
+      />
+      <label for="email">Email: </label>
+      <input
+        name="email"
+        type="email"
+        required
+        placeholder="gmail is preferred"
+      />
+      <label for="password">Password: </label>
+      <input name="password" type="password" required />
+         <label for="new-password">Re-type your password: </label>
+    <input name="new-password" type="password" required inert/> 
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</html>  
+
+
+
+
   //MANNY DEMO INDEX HTML FOR USERS-INPUTS-POST ROUTES
   
   <body>
@@ -53,40 +92,9 @@ function handleSubmit(event) {
   // the next step would be to send the form values to the server to be processed (week 4 topic)
 
 
-  //MANNY DEMO CODE - INDEX HTML - FORMS & VALIDATION
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="./app.js" defer></script>
-    <title>Forms and validation</title>
-  </head>
-  <body>
-    <h1>Forms and Validation</h1>
-    <form id="user-form">
-      <label for="full-name">Full name: </label>
-      <input
-        name="full-name"
-        id="full-name"
-        class="full-name"
-        type="text"
-        required
-        placeholder="spell check!"
-      />
-      <label for="email">Email: </label>
-      <input
-        name="email"
-        type="email"
-        required
-        placeholder="gmail is preferred"
-      />
-      <label for="password">Password: </label>
-      <input name="password" type="password" required />
-         <label for="new-password">Re-type your password: </label>
-    <input name="new-password" type="password" required inert/> 
-      <button type="submit">Submit</button>
-    </form>
-  </body>
-</html>
+
+
+
+
+
 
