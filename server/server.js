@@ -100,7 +100,7 @@ app.post("/add-guest", (req, res) => {
   //database query
   //in our SQL queries, we can have a placeholder (parameter) that we will replace with the actual values when the client sends them
   const query = db.query(
-    `INSERT INTO guest (name, email, comment) VALUES ($1, $2, $3, $4)`,
+    `INSERT INTO guest (name, email, comment) VALUES ($1, $2, $3)`,
     [newGuest.name, newGuest.email, newGuest.comment]
   );
   res.json("Data sent", query);
