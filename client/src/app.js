@@ -1,20 +1,34 @@
 //TODO: collect data from user and send to server
 //-select the html element with users inputs
 
-// - event listener
-const form = document.getElementById("guestFeedback");
+//TODO: Get database data from the server and rend (display) on the page
 
-form.addEventListener("submit", handleSubmit);
+// - event listener
+const guestForm = document.getElementById("guestFeedback");
+
+guestForm.addEventListener("submit", handleSubmit);
 // - event handler
 //TODO: handle the form data
-function handleSubmit(event) {
+function handleSubmit() {
   event.preventDefault();
-  const formDataTemplate = new FormData(form);
-  console.log(formDataTemplate);
-  const formValues = Object.fromEntries(formDataTemplate);
-  console.log(formValues);
-}
 
+  // userInput.textContent = `Name: ${userInput.name}, Email: ${userInput.email}, Comment: ${userInput.comment}`;
+
+  const formDataTemplate = new FormData(guestForm);
+
+  console.log(formDataTemplate);
+
+  const formValues = Object.fromEntries(formDataTemplate.entries());
+  console.log(formValues);
+
+  const returnedData = document.getElementById("dataReturn");
+  if (returnedData) {
+    returnedData.textContent = `Name: ${formValues.name}, Email: ${formValues.email}, Comment: ${formValues.comment}`;
+  }
+
+  const stringifiedUserInput = JSON.stringify(formValues);
+  localStorage.setItem("userInput", stringifiedUserInput);
+}
 //- add the user input values to our object template
 
 //-add event to html element
